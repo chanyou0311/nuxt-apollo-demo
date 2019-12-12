@@ -35,7 +35,31 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ["@nuxtjs/apollo"],
+  /*
+   ** apollo configurations
+   */
+  apollo: {
+    clientConfigs: {
+      default: {
+        // required
+        httpEndpoint: "http://localhost:4000/graphql",
+        // You can use `wss` for secure connection (recommended in production)
+        // Use `null` to disable subscriptions
+        wsEndpoint: "ws://localhost:4000/graphql", // optional
+        // Use websockets for everything (no HTTP)
+        // You need to pass a `wsEndpoint` for this to work
+        websocketsOnly: true // Optional
+      },
+      test: {
+        httpEndpoint: "http://localhost:5000",
+        wsEndpoint: "ws://localhost:5000",
+        tokenName: "apollo-token"
+      },
+      // alternative: user path to config which returns exact same config options
+      test2: "~/plugins/my-alternative-apollo-config.js"
+    }
+  },
   /*
    ** Build configuration
    */
