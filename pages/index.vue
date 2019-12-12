@@ -1,23 +1,34 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">nuxt-apollo-demo</h1>
-      <h2 class="subtitle">My geometric Nuxt.js project</h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </div>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>名前</th>
+      <th>メール</th>
+      <th>年齢</th>
+    </tr>
+    <tr v-for="item in users" :key="item.id">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.age }}</td>
+    </tr>
+  </table>
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
+import getUsersGql from "~/apollo/queries/getUsers.gql";
 
 export default {
-  components: {
-    Logo
+  data() {
+    return {
+      users: []
+    };
+  },
+
+  apollo: {
+    users: {
+      query: getUsersGql
+    }
   }
 };
 </script>
