@@ -1,0 +1,17 @@
+{
+  "name": "nuxt-apollo-demo",
+  "version": "1.0.0",
+  "description": "My geometric Nuxt.js project",
+  "author": "chanybou0311",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {}
+}
