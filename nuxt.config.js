@@ -50,14 +50,7 @@ export default {
         // Use websockets for everything (no HTTP)
         // You need to pass a `wsEndpoint` for this to work
         websocketsOnly: true // Optional
-      },
-      test: {
-        httpEndpoint: "http://localhost:5000",
-        wsEndpoint: "ws://localhost:5000",
-        tokenName: "apollo-token"
-      },
-      // alternative: user path to config which returns exact same config options
-      test2: "~/plugins/my-alternative-apollo-config.js"
+      }
     }
   },
   /*
